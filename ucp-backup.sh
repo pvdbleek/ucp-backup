@@ -7,7 +7,7 @@ AWS_SECRET_KEY=$(cat /run/secrets/aws_secret_key)
 # Configure the AWS CLI
 echo "[default]" > /root/.aws/config
 echo "region = $AWS_REGION" >> /root/.aws/config
-echo "[default]" >> /root/.aws/credentials
+echo "[default]" > /root/.aws/credentials
 echo "aws_access_key_id = $AWS_ACCESS_KEY" >> /root/.aws/credentials 
 echo "aws_secret_access_key = $AWS_SECRET_KEY" >> /root/.aws/credentials
 
