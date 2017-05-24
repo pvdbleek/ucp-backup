@@ -15,6 +15,7 @@ You might want to adjust that to your preferred time.
 ### Build & push the image
 
 ```docker build -t <namespace>/<repository> .```
+
 ```docker push <namespace>/<repository>```
 
 ### Deploy AWS S3 credentials to Docker Swarm secrets
@@ -22,6 +23,7 @@ You might want to adjust that to your preferred time.
 Assuming you know how to set up an S3 bucket and IAM access:
 Create two secrets in swarm:
 ```echo <your_aws_access_key> | docker secret create aws_access_key -```
+
 ```echo <your_aws_secret_key> | docker secret create aws_secret_key -```
 
 ### Deploy ucp-backup as a swarm service
@@ -34,6 +36,7 @@ Bind mount the Docker socket on:
 
 Expose the following two environment variables to your service:
 ``` AWS_REGION = <the_aws_region_your_s3_account_lives>```
+
 ``` AWS_BUCKET = <the_name_of_your_s3_bucket>```
 
 
