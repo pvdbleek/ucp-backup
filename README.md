@@ -35,6 +35,8 @@ Make sure to use the following constraint:
 Bind mount the Docker socket on:
 ```/var/run/docker.sock```
 
+Mount ```/etc/localtime``` to the container so that we use the same timezone as the host.
+
 Expose the following two environment variables to your service:
 
 ``` AWS_REGION = <the_aws_region_your_s3_account_lives>```

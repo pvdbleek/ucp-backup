@@ -6,7 +6,6 @@ RUN apk add --update curl && \
     rm -rf /var/cache/apk/*
 
 RUN apk add --no-cache tzdata && \
-    ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime && \
     rm -rf /var/cache/apk/*
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
