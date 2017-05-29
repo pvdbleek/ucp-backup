@@ -17,5 +17,5 @@ export UCP_IMAGE=docker/ucp:$(docker inspect --format='{{.Config.Image}}' ucp-pr
 # Run a backup of the UCP Controller
 echo y | docker run --rm -i --name ucp -v /var/run/docker.sock:/var/run/docker.sock $UCP_IMAGE backup --interactive > /tmp/$BACKUP_FILE
 
-# Copy backup.tar to the S3 bucket
-aws s3 cp /tmp/$BACKUP_FILE s3://$AWS_BUCKET
+# Copy backup.tar to the S3 bucket and remove local copy if successful
+aws s3 cp /tmp/$BACKUP_FILE s3://$AWS_BUCKET && rm /tmp/$BACKUP_FILE
